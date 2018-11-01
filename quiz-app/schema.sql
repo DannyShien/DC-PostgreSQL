@@ -1,22 +1,25 @@
 create table quizzes (
     id serial primary key, 
-    name varchar (300);
+    name varchar (300)
 );
 
 create table questions (
     id serial primary key, 
     question_text text, 
     correct_answer text, 
-    quiz_id integer references quezzes (id)
+    quiz_id integer references quizzes (id)
 );
 
 create table students (
-    id serieal primary key, 
-    name varcahr (300)
+    id serial primary key, 
+    name varchar (300)
 );
 
-creaste table answers (
-
+create table answers (
+    id serial primary key, 
+    answer_text text, 
+    question_id integer references questions (id), 
+    student_id integer references students (id)
 );
 
 
